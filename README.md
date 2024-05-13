@@ -1,6 +1,6 @@
 This project is a console application and coded using the java language.
 The project creates a field by asking the user for row and column information and fills this field with random mines. 
-It shows the proximity of the mine with numbers such as 0 1 2 3, just like in a classic minefield game.
+It shows the proximity of the mine with numbers such as 0 1 2 3, just like in a classic minesweeper game.
 The user loses when he steps on a mine, and wins when he chooses all areas without mines.
 Here some screenshots from the application.
 
