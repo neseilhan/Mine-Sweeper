@@ -2,7 +2,7 @@ package MineSweeper;
 import java.util.Scanner;
 import java.util.Random;
 
-public class MineSweeper {
+public class MineSweeper { // Değerlendirme formu 5
     public  void Run() {
         Scanner inp = new Scanner(System.in);
         Random rand = new Random();
@@ -12,7 +12,7 @@ public class MineSweeper {
         // ------------------------------------ GET MATRİX VALUES FROM USER ----------------------------------------
 
         int row, column;
-        do {
+        do { // Değerlendirme formu 7
             System.out.println("Enter the number of rows (minimum 2): ");
             row = inp.nextInt();
             System.out.println("Enter the number of columns (minimum 2): ");
@@ -33,6 +33,7 @@ public class MineSweeper {
 
         // -----------------------CALCULATİNG THE NUMBER OF MİNES AND PLACİNG THEM -------------------------------
 
+        // Değerlendirme formu 8
         int AreaofBoard = row * column;
         int NumberofMines = row * column/ 4;
 
@@ -60,16 +61,17 @@ public class MineSweeper {
 
             int selectedRow, selectedColumn;
 
-            do {
+            do { // Değerlendirme formu 9
                 System.out.println("Enter a row (0 to " + (row - 1) + "): ");
                 selectedRow = inp.nextInt();
                 System.out.println("Enter a column (0 to " + (column - 1) + "): ");
                 selectedColumn = inp.nextInt();
                 boolean isSelected = true;
+                // Değerlendirme formu 11
                 char cell = matrix[selectedRow][selectedColumn];  //when selected a cell.
 
 
-                if (cell == MINE) { //check the mine, print all matrix and game over.
+                if (cell == MINE) { //check the mine, print all matrix and game over. // Değerlendirme formu 13
                     System.out.println("Game Over! You stepped on a mine.");
                     gameOver = true;
                     for (int i = 0; i < row; i++) {
@@ -98,16 +100,17 @@ public class MineSweeper {
                     }
                 }
 
-                if (isGameWon(matrix)) { //winning condition.
-                    System.out.println("You won the game!");
+                if (isGameWon(matrix)) { //winning condition. // Değerlendirme formu 14
+                    System.out.println("You won the game!"); // Değerlendirme formu 15
                     gameOver = true;
                 }
 
-            } while (!isValidInput(selectedRow, selectedColumn, row, column));
+            } while (!isValidInput(selectedRow, selectedColumn, row, column)); // Değerlendirme formu 10
 
         }
     }
     // -----------------------------------------  METHODS  ---------------------------------------------------------
+    // Değerlendirme formu 6
     private static boolean isGameWon(char[][] matrix) {
         char DEFAULT_SYMBOL = '-';
         for (int i = 0; i < matrix.length; i++) {
@@ -119,7 +122,7 @@ public class MineSweeper {
         }
         return true;
     }
-    private static int checkNearbyMines(char[][] matrix, int row, int column) {
+    private static int checkNearbyMines(char[][] matrix, int row, int column) { // Değerlendirme formu 12
         int count = 0;
         final char MINE = '*';
 
